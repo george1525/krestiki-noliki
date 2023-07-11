@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Крестики-нолики</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+
+
+  <body>
+
+
+    <!-- Tab links -->
+<header class="tab" id="tabW">
+  <button id="defaultOpen" class="tablinks" onclick="openTab(event, 'Field')">Игровое поле</button>
+  <button class="tablinks" onclick="openTab(event, 'Rating')">Рейтинг</button>
+  <button class="tablinks" onclick="openTab(event, 'ActivePlayers')">Активные игроки</button>
+  <button class="tablinks" onclick="openTab(event, 'History')">История игр</button>
+  <button class="tablinks" onclick="openTab(event, 'PlayersList')">Список игроков</button>
+</header>
+
+ 
+
+<!-- Tab content -->
+<div id="Field" class="tabcontent">
+
+ <div class="currentPlayers" id = "currentPlayers">
+     Игроки<br>
+    <div class="currentPlayersText">
+      <img class = "smallKrestik" src="krestik1.png" >
+      <span id = "currentPlayer1"></span><br>
+
+      <img class = "smallNolik" src="nolik1.png" >      
+      <span id = "currentPlayer2"></span>
+
+    </div>
+  </div>
+
+  <div class = "timer" id = "timer" >00:00</div>
+
+  <div class = "winMenu" id = "winMenu"> 
+   <div><img class = "kubok" src="kubok.png" > </div> <br> 
+  <div><span class = "winMenuText" id="winMenuText">Победивший игрок</span> </div><br>
+  <button class = "toStartMenuBtn" onclick="toMenu()">Выйти в меню</button>
+  </div>
+
+<p>
+  <button class="fieldBtn" id="fBtn1" onclick="changeState(event)"></button>
+  <button class="fieldBtn" id="fBtn2" onclick="changeState(event)"></button>
+  <button class="fieldBtn" id="fBtn3" onclick="changeState(event)"></button>
+</p>
+<p>
+  <button class="fieldBtn" id="fBtn4" onclick="changeState(event)"></button>
+  <button class="fieldBtn" id="fBtn5" onclick="changeState(event)"></button>
+  <button class="fieldBtn" id="fBtn6" onclick="changeState(event)"></button>
+</p>
+<p>
+  <button class="fieldBtn" id="fBtn7" onclick="changeState(event)"></button>
+  <button class="fieldBtn" id="fBtn8" onclick="changeState(event)"></button>
+  <button class="fieldBtn" id="fBtn9" onclick="changeState(event)"></button>
+</p>
+
+<div id= "currentStep" class = "currentStep">
+  Ходит 
+  <img id = "currentSign" class = "currentSign" src="krestik1.png" >
+  <span id="spanPlayerName">Игрок</span>
+</div>
+
+
+<button onclick="info()">инф</button>
+
+</div>
+
+<div id="Rating" class="tabcontent">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p>
+</div>
+
+<div id="ActivePlayers" class="tabcontent">
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+
+<div id="History" class="tabcontent">
+  <h3>Moscow</h3>
+  <p>Moscow is the capital of Russia.</p>
+</div>
+
+<div id="PlayersList" class="tabcontent">
+  <h3>Kiev</h3>
+  <p>Kiev is the capital of Ukraine.</p>
+</div>
+	
+<div id = "startMenu" class ="startMenu">
+  <div>
+    <div><label for="name">Имя игрока 1:</label>
+  <input type="text" id="p1Input">
+  <img class = "smallKrestik" src="krestik1.png" >
+</div>
+  <div><label for="name"><br>Имя игрока 2:</label>
+  <input type="text" id="p2Input">
+  <img class = "smallNolik" src="nolik1.png" >
+</div> 
+<h2></h2>
+<div>
+  <button class = "startBtn" id="startBtn" onclick="start()">Начать</button>
+</div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+  </body>
+</html>

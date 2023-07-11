@@ -1,0 +1,242 @@
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    background-color: #ffffff;
+    padding: 18px 16px;
+    display: flex;
+    justify-content: center;
+    border-radius: 0px 0px 15px 15px; 
+    object-fit: cover;
+    box-shadow: 2px 2px 5px rgb(226, 226, 229);
+    
+    
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 7px 12px;
+    transition: 0.2s;
+    border-radius: 90px;
+    font-weight: 600;
+    margin-left: 12px;
+    font-size: 100%;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #373745;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #e6e4e4;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #60c2aa;
+    color: white
+    
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    margin: 60px auto;
+    width: 610px; 
+    pointer-events: none;
+   
+}
+.tabcontent {
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+html, body {
+    background-color: #f6f6f6;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.fieldBtn {
+    width: 200px;
+    height: 200px;
+    margin-top: -15px;
+    margin-left: 0px;
+    border-radius: 10px;
+    border: 0px;
+    background-position: center;
+    background-color: #ffffff;
+    box-shadow: 1px 3px 10px rgb(226, 226, 229);
+    cursor: pointer;
+}
+.fieldBtn:hover {
+    background-color: #ececec;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.timer {
+    width: 140px;
+    height: 80px;
+    border-radius: 10px;
+    border: 0px;
+    background-color: #ededed;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 90px;
+    font-size: 35px;
+    font-weight: 600;
+    font-family:Arial, Helvetica, sans-serif;
+    vertical-align: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #373745;
+  
+}
+
+.startMenu {
+    background-color: #ededed;
+    border-radius: 10px;
+    width: 420px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: -600px;
+    position:relative;
+    z-index: 99999;
+    
+}
+
+.startBtn {
+    margin-left: 135px;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 7px 12px;
+    transition: 0.2s;
+    border-radius: 90px;
+    font-weight: 600;
+    color: #000000;
+    font-size: 100%
+}
+.startBtn:hover {
+    background-color: #e6e4e4;
+}
+.startBtn:active {
+    background-color: #60c2aa;
+    color: white
+}
+label {
+    font-weight: 600;
+    color: #000000;
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.smallKrestik {
+   
+    margin-bottom: -20px;
+}
+.smallNolik {
+   
+    margin-bottom: -20px;
+}
+
+.currentStep {
+    background-color: #373745;
+    border-radius: 10px;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    width: 300px;
+    height: 40px;
+    margin: auto;
+    margin-top: 30px;
+    font-weight: 500;
+    font-size: 100%;
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+.currentPlayers {
+    background-color: #ffffff;
+    visibility: hidden;
+    width: 450px;
+    height: 180px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgb(226, 226, 229);
+    margin-top: -5px;
+    margin-bottom: -220px;
+    margin-left: -600px;
+    position:relative;
+    z-index: 20;
+    padding-left: 40px;
+    padding-top: 30px;
+    font-size: 25px;
+    font-weight: 600;
+    font-family:Arial, Helvetica, sans-serif;
+    line-height: 2;
+    color: #373745;
+}
+
+.currentPlayersText {
+    font-weight: 400;
+}
+
+.winMenu {
+    background-color: #ffffff;
+    visibility: hidden;
+    width: 310px;
+    height: 360px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgb(226, 226, 229);
+    position:relative;
+    z-index: 10;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family:Arial, Helvetica, sans-serif;
+    line-height: 2;
+    color: #373745;
+    left: 725px;
+    top: -40px;
+    margin-bottom: -430px;
+    text-align: center;
+
+}
+.kubok {
+    width: 60%;
+    height: 50%;
+    margin-left: 0px;
+    margin-bottom: -55px;
+}
+
+.toStartMenuBtn {
+    width: 310px;
+    height: 40px;
+    border: 0;
+    border-radius: 10px;
+    color:#373745;
+    font-size: 70%;
+    font-weight: 600;
+    background-color: #f7f7f7;
+    cursor: pointer;
+}

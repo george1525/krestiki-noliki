@@ -24,32 +24,20 @@ function openTab(event, tabName) {
      // Get the element with id="defaultOpen" and click on it
      document.getElementById("defaultOpen").click();
 
-var timerCounter=0,counter=0, currentImage=0, pWin=0, fBtn1=0, fBtn2=0, fBtn3=0, fBtn4=0, fBtn5=0, fBtn6=0, fBtn7=0, fBtn8=0, fBtn9=0,lol=0;
-let timer_start = true;   
+var counter=0, pWin=0, fBtn1=0, fBtn2=0, fBtn3=0, fBtn4=0, fBtn5=0, fBtn6=0, fBtn7=0, fBtn8=0, fBtn9=0;
 let p1Name = document.getElementById('p1Input').value;
 let p2Name = document.getElementById('p2Input').value;
 // Функция, которая будет вызываться при нажатии на кнопку
 function changeState(event) {
-
-  
-    
-   
     buttonID = event.currentTarget.id;
    // event.currentTarget.style.backgroundImage = 'url("krestik.jpg")';
 
-    if (event.currentTarget.style.backgroundImage == 0 && counter%2==0) {
+    if ((event.currentTarget.style.backgroundImage == 0 && counter%2==0) || (event.currentTarget.style.backgroundImage == 'none' && counter%2==0)) {
         event.currentTarget.style.backgroundImage = 'url("krestik.png")';
-
         document.getElementById('spanPlayerName').innerHTML = p2Name;
         document.getElementById('currentSign').src = 'nolik1.png';
-
         counter += 1;
-        
-       
 
-        
-      
-        
         switch (buttonID) {
             case 'fBtn1':
               fBtn1 = 'krestik'
@@ -81,7 +69,7 @@ function changeState(event) {
           }
     }
 
-    else if (event.currentTarget.style.backgroundImage == 0 && counter%2==1) {
+    else if ((event.currentTarget.style.backgroundImage == 0 && counter%2==1) || (event.currentTarget.style.backgroundImage == 'none' && counter%2==1)) {
         event.currentTarget.style.backgroundImage = 'url("nolik.png")';
 
         document.getElementById('spanPlayerName').innerHTML = p1Name;
@@ -175,13 +163,15 @@ function startTimer() {
 
 function info()
 {
-    alert(`${fBtn1} ${fBtn2} ${fBtn3} ${fBtn4} ${fBtn5} ${fBtn6} ${fBtn7} ${fBtn8} ${fBtn9}`);
+    alert(`${fBtn1} ${fBtn2} ${fBtn3} ${fBtn4} ${fBtn5} ${fBtn6} ${fBtn7} ${fBtn8} ${fBtn9} ${p1Name} ${p2Name}`);
 }
 
+  const fieldBtns = document.getElementsByClassName('fieldBtn'); // Получение коллекции элементов с классом 'fieldBtn'
 
-let proverka = setInterval(function() {
+function proverka() {
+  let proverka = setInterval(function() {
     let winningCondition = '';
-    const fieldBtns = document.getElementsByClassName('fieldBtn'); // Получение коллекции элементов с классом 'fieldBtn'
+  
     if (fBtn1 === 'krestik' && fBtn2 === 'krestik' && fBtn3 === 'krestik') {
       clearInterval(proverka);
       winningCondition = 'fBtn1 - fBtn2 - fBtn3';
@@ -298,10 +288,10 @@ let proverka = setInterval(function() {
         }
        
         if (pWin == 1) {
-         // alert(`Победил ${p1Name}. Условие: ${winningCondition}`);
+          //alert(`Победил ${p1Name}. Условие: ${winningCondition}`);
          
          for (let i = 0; i < fieldBtns.length; i++) {
-           fieldBtns[i].style.pointerEvents = 'none';; // Установка значения 'hidden' для параметра visibility элемента
+           fieldBtns[i].style.pointerEvents = 'none';
          }
           document.getElementById('currentStep').style.visibility = 'hidden';
           document.getElementById('currentPlayers').style.visibility = 'hidden';
@@ -310,7 +300,7 @@ let proverka = setInterval(function() {
           document.getElementById('winMenu').style.visibility = 'visible';
           }
         else if (pWin == 2) {
-          //alert(`Победил ${p2Name}. Условие: ${winningCondition}`);
+         // alert(`Победил ${p2Name}. Условие: ${winningCondition}`);
           for (let i = 0; i < fieldBtns.length; i++) {
             fieldBtns[i].style.pointerEvents = 'none';; // Установка значения 'hidden' для параметра visibility элемента
           }
@@ -333,12 +323,35 @@ let proverka = setInterval(function() {
             document.getElementById('winMenu').style.visibility = 'visible';
         }
         
-  }, 200);
+  }, 200);  
+}
+proverka();
   function toMenu() {
-  //  document.getElementById('winMenu').style.visibility = 'hidden';
+ 
     location.reload();
   }
-  
+  function newGame() {
+    counter=0, pWin=0, fBtn1=0, fBtn2=0, fBtn3=0, fBtn4=0, fBtn5=0, fBtn6=0, fBtn7=0, fBtn8=0, fBtn9=0;
+    minutes=0, seconds=0;
+    startTimer();
+    for (let i = 0; i < fieldBtns.length; i++) {
+        fieldBtns[i].style.pointerEvents = 'auto';
+        fieldBtns[i].style.backgroundImage = 'none';
+        fieldBtns[i].style.backgroundImage = '0';
+        fieldBtns[i].style.backgroundColor = '#ffffff';
+      }
+      document.getElementById('Field').style.pointerEvents = 'auto';
+      document.getElementById('startMenu').style.display = 'none';
+      proverka();
+      document.getElementById('currentPlayers').style.visibility = 'visible';
+      document.getElementById('currentStep').style.visibility = 'visible';
+      document.getElementById('winMenu').style.visibility = 'hidden';
+      document.getElementById('spanPlayerName').innerHTML = p1Name;
+      document.getElementById('currentPlayer1').innerHTML = p1Name;
+      document.getElementById('currentPlayer2').innerHTML = p2Name;
+      document.getElementById('currentSign').src = 'krestik1.png';
+
+  }
 while(true) {
      document.getElementById(tabW).style.width = document.documentElement.clientWidth; // коррекция ширины шапки в зависимости от ширины окна
  }
